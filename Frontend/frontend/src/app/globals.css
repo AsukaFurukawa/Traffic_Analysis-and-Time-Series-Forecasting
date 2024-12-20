@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-dark: linear-gradient(135deg, #020b2c, #001128);
+  --widget-bg: linear-gradient(145deg, #011637, #00214d);
+  --hover-glow: rgba(0, 255, 255, 0.8);
+  --text-primary: #ffffff;
+  --table-bg: #01122b;
+  --table-border: #00254d;
+  --hover-row: #02264a;
+}
+
+body {
+  background: var(--background-dark);
+  color: var(--text-primary);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.widget {
+  background: var(--widget-bg);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 30px var(--hover-glow), 0 0 60px var(--hover-glow);
+}
+
+h1,
+h2 {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--table-bg);
+  color: var(--text-primary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+table th {
+  border-bottom: 2px solid var(--hover-glow);
+}
+
+table tr:hover {
+  background: var(--hover-row);
+}
